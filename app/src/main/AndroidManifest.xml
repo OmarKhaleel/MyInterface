@@ -12,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyInterface"
         tools:targetApi="31">
-
         <activity
             android:name=".MainActivity2"
             android:exported="true"
@@ -24,8 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Login" />
+        <activity android:name=".ToDoList" />
     </application>
 
 </manifest>
