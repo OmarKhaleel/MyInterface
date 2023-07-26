@@ -11,12 +11,10 @@ class Login : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
 
-        val emailED: EditText = findViewById(R.id.EmailED)
-        val passwordED: EditText = findViewById(R.id.PasswordED)
         val loginBTN: Button = findViewById(R.id.LoginBTN)
 
         loginBTN.setOnClickListener {
-            val intent = Intent(this, ToDoList::class.java)
+            val intent = Intent(this, HomePage::class.java)
             startActivity(intent)
         }
     }

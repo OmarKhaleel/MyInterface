@@ -9,18 +9,18 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 
-class ItemAdapter(context: Context, private val resourceId: Int, private val items: MutableList<Item>) :
-    ArrayAdapter<Item>(context, resourceId, items) {
+class ItemAdapter(context: Context, private val resourceId: Int, private val items: MutableList<ToDoListItem>) :
+    ArrayAdapter<ToDoListItem>(context, resourceId, items) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view: View = convertView ?: LayoutInflater.from(context).inflate(resourceId, null)
 
-        val itemTextView: TextView = view.findViewById(R.id.ItemTV)
+        val itemTV: TextView = view.findViewById(R.id.ItemTV)
         val checkBox: CheckBox = view.findViewById(R.id.CheckBox)
         val deleteBTN: Button = view.findViewById(R.id.DeleteBTN)
 
         val item = items[position]
-        itemTextView.text = item.name
+        itemTV.text = item.name
         checkBox.isChecked = item.isChecked
 
         checkBox.setOnClickListener {

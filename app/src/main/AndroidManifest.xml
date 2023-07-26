@@ -24,7 +24,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login" />
+        <activity android:name=".HomePage" />
         <activity android:name=".ToDoList" />
+        <activity android:name=".ExpensesActivity" />
     </application>
 
 </manifest>
