@@ -4,8 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
@@ -20,12 +23,22 @@ class MainActivity2 : ComponentActivity() {
     private lateinit var scalar: ProgressBar
     private lateinit var ratingStatus: TextView
     private lateinit var submitBTN: Button
+    private lateinit var fadeInAnimation: Animation
+    private lateinit var clickAnimation: Animation
+    private lateinit var registrationImage: ImageView
+    private lateinit var rollingAnimation: Animation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         init()
+        emailED.startAnimation(fadeInAnimation)
+        passwordED.startAnimation(fadeInAnimation)
+        confirmPasswordED.startAnimation(fadeInAnimation)
+        registrationImage.postDelayed({
+            registrationImage.startAnimation(rollingAnimation)
+        }, 1000)
 
         submitBTN.setOnClickListener {
             val email: String = emailED.text.toString()
@@ -47,8 +60,9 @@ class MainActivity2 : ComponentActivity() {
                     }
 
                     Toast.makeText(this, "Signup successful!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, Login::class.java)
-                    startActivity(intent)
+//                    val intent = Intent(this, Login::class.java)
+//                    startActivity(intent)
+                    submitBTN.startAnimation(clickAnimation)
                 } else {
                     Toast.makeText(this, "Password must be 8-20 characters, containing at least 1 small letter, 1 capital letter, 1 number, and 1 special character.", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
@@ -94,6 +108,10 @@ class MainActivity2 : ComponentActivity() {
         scalar = findViewById(R.id.ProgressBar)
         ratingStatus = findViewById(R.id.RatingTV)
         submitBTN = findViewById(R.id.SubmitBTN)
+        fadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+        clickAnimation = AnimationUtils.loadAnimation(this, R.anim.button_click_animation)
+        registrationImage = findViewById(R.id.imageView)
+        rollingAnimation = AnimationUtils.loadAnimation(this, R.anim.rolling_animation)
     }
 
     private fun isValidEmail(email: String): Boolean {

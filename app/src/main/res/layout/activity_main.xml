@@ -6,21 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2"
     android:orientation="vertical"
-    android:gravity="center" >
+    android:gravity="center"
+    android:background="@color/light_grey" >
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/WelcomeTV"
         android:text="Welcome to MyInterface"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        style="@style/TextViewStyle" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="125dp"
+        android:layout_height="115dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/_080887" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/EmailED"
         android:hint="Enter your email.."
-        android:layout_marginTop="64dp" />
+        android:layout_marginTop="64dp"
+        style="@style/EditTextStyle" />
 
     <EditText
         android:layout_width="match_parent"
@@ -28,7 +38,8 @@
         android:id="@+id/PasswordED"
         android:hint="Enter your password.."
         android:inputType="textPassword"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        style="@style/EditTextStyle" />
 
     <EditText
         android:layout_width="match_parent"
@@ -36,23 +47,25 @@
         android:id="@+id/ConfirmPasswordED"
         android:hint="Confirm your password.."
         android:inputType="textPassword"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        style="@style/EditTextStyle" />
 
 
     <ProgressBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+        style="@style/CustomProgressBar"
         android:progress="0"
         android:max="100"
-        android:progressDrawable="@android:drawable/progress_horizontal"/>
+        android:progressDrawable="@android:drawable/progress_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/RatingTV"
-        android:text="" />
+        android:text=""
+        style="@style/EditTextStyle" />
 
 
     <Button
@@ -60,7 +73,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/SubmitBTN"
         android:text="Submit"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        style="@style/ButtonStyle" />
 
 
 </LinearLayout>

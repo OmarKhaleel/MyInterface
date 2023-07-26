@@ -18,7 +18,6 @@ class ExpensesActivity : ComponentActivity() {
     private val expensesList = mutableListOf<ExpenseItem>()
     private lateinit var expenseAdapter: ExpenseAdapter
     private val options = mutableListOf("Select an option", "Food", "Transportation", "+ Add new option")
-    private val expenseTypes = MutableLiveData<List<String>>(listOf("Food", "Transportation"))
     private lateinit var selectedOption: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,7 +74,6 @@ class ExpensesActivity : ComponentActivity() {
             if (newOption.isNotEmpty()) {
                 options.add(options.size - 1, newOption)
                 (optionsSpinner.adapter as ArrayAdapter<String>).notifyDataSetChanged()
-                expenseTypes.value = options.subList(0, options.size - 1)
                 alertDialog.dismiss()
             }
         }
