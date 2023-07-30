@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".HomePage"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center" >
 
     <TextView
         android:layout_width="match_parent"
@@ -27,8 +27,28 @@
         android:padding="16dp"
         android:gravity="center"
         android:clickable="true"
-        android:background="?android:attr/selectableItemBackground" >
+        android:background="?android:attr/selectableItemBackground" />
 
-    </GridView>
+    <TextView
+        android:id="@+id/cityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="64dp"
+        android:text="Loading weather data..." />
+
+    <TextView
+        android:id="@+id/temperatureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Temperature" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Description" />
 
 </LinearLayout>

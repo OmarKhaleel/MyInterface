@@ -60,9 +60,12 @@ class MainActivity2 : ComponentActivity() {
                     }
 
                     Toast.makeText(this, "Signup successful!", Toast.LENGTH_SHORT).show()
-//                    val intent = Intent(this, Login::class.java)
-//                    startActivity(intent)
                     submitBTN.startAnimation(clickAnimation)
+                    submitBTN.postDelayed({
+                        val intent = Intent(this, HomePage::class.java)
+                        startActivity(intent)
+                    }, 1000)
+
                 } else {
                     Toast.makeText(this, "Password must be 8-20 characters, containing at least 1 small letter, 1 capital letter, 1 number, and 1 special character.", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener

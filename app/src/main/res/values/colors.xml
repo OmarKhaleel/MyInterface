@@ -8,6 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#F5F5F5</color>
+    <color name="activity_background">#E6F0F5</color>
+<!-- Grid Colors   -->
+    <color name="grid_item_color_1">#F2B5D4</color>
+    <color name="grid_item_color_2">#F5D6C6</color>
+    <color name="grid_item_color_3">#C6E0F5</color>
 <!--    -->
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
